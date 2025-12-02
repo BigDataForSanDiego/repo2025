@@ -1,0 +1,20 @@
+html,body { height:100%; margin:0; }
+#map { height:100vh; }
+.panel{
+  position:fixed; top:12px; left:12px; z-index:1000;
+  background:#fff; border:1px solid #ccd; box-shadow:0 6px 18px rgba(0,0,0,.12);
+  border-radius:10px; padding:10px; width:300px; font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+}
+.panel .row{ margin-bottom:8px; }
+.panel .row.small{ font-size:12px; color:#334; }
+.panel label{ display:block; font-weight:600; margin-bottom:4px; }
+.panel input{
+  width:100%; padding:8px; border:1px solid #ccd; border-radius:8px; outline:none;
+}
+.panel .btns{ display:flex; gap:6px; margin-top:6px; }
+.panel button{
+  padding:6px 10px; border:1px solid #ccd; background:#f6f8ff; border-radius:8px; cursor:pointer;
+}
+.panel button.primary{ background:#2e7dff; color:#fff; border-color:#2e7dff; }
+.badge{ display:inline-block; padding:2px 6px; border-radius:6px; background:#eef; border:1px solid #99b; color:#223; font-size:12px }
+.leaflet-popup-content{ font:14px/1.3 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; }

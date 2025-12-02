@@ -1,0 +1,100 @@
+# -----------------------------
+# Global / system files
+# -----------------------------
+.DS_Store
+Thumbs.db
+*.log
+*.env
+.env.*
+!.env.example
+
+# -----------------------------
+# Python / Backend
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.sqlite3
+instance/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+venv/
+.venv/
+env/
+ENV/
+.Python
+
+# FastAPI / Alembic / Uvicorn
+alembic.ini
+alembic/
+*.db
+*.sqlite
+*.pid
+
+# -----------------------------
+# Node / Frontend (Next.js)
+# -----------------------------
+node_modules/
+.npm/
+.yarn/
+.pnp.*
+.pnp.js
+.next/
+out/
+dist/
+build/
+coverage/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# -----------------------------
+# IDE / Editor files
+# -----------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.bak
+
+# -----------------------------
+# OS / Temp
+# -----------------------------
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+*.orig
+
+# -----------------------------
+# Project-specific
+# -----------------------------
+# Backend virtual environment or build artifacts
+backend/.venv/
+backend/__pycache__/
+backend/.pytest_cache/
+backend/*.db
+
+# Frontend build and local cache
+fe/.next/
+fe/node_modules/
+fe/.turbo/
+fe/dist/
+fe/out/
+fe/.vercel/
+fe/.swc/
+fe/.eslintcache

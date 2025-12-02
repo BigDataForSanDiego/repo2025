@@ -1,0 +1,3 @@
+{ "data":[
+  { "service_name":"Community Meal Center", "service_category":"food", "latitude":32.7175, "longitude":-117.1570, "hours_of_operation":"Daily 5-7pm", "address":"456 Sample Ave", "contact_phone":"(555) 222-3333", "service_status":"open", "capacity_available":null, "wait_time":10, "last_verified":"2025-01-02T00:00:00Z" }
+]}

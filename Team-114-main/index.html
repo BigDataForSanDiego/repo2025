@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/icons/resourcify-192.png" />
+    <link rel="apple-touch-icon" href="/icons/resourcify-192.png" />
+    
+    <!-- Viewport and Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- App Information -->
+    <title>Resourcify - AI Resource Manager</title>
+    <meta name="description" content="AI-powered tool that helps people manage and plan their resources by scanning items and providing smart recommendations for better preparedness." />
+    <meta name="keywords" content="resource management, AI, resource planning, emergency preparedness, survival, inventory, budget planning" />
+    <meta name="author" content="Resourcify Team" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Theme and App Appearance -->
+    <meta name="theme-color" content="#764ba2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Resourcify" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Resourcify" />
+    
+    <!-- Windows/Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="/icons/resourcify-144.png" />
+    <meta name="msapplication-TileColor" content="#764ba2" />
+    <meta name="msapplication-config" content="none" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Resourcify - AI Resource Manager" />
+    <meta property="og:description" content="AI-powered tool that helps people manage and plan their resources by scanning items and providing smart recommendations." />
+    <meta property="og:image" content="/icons/resourcify-512.png" />
+    <meta property="og:url" content="https://resourcify.vercel.app" />
+    <meta property="og:site_name" content="Resourcify" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Resourcify - AI Resource Manager" />
+    <meta name="twitter:description" content="AI-powered resource management and planning tool" />
+    <meta name="twitter:image" content="/icons/resourcify-512.png" />
+    
+    <!-- Additional Security and Performance -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://resourcify.vercel.app" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://vision.googleapis.com" />
+    <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
+    
+    <!-- Performance hints -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="color-scheme" content="light" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Service Worker Registration - TODO: Create sw.js file -->
+    <!-- Commented out until service worker is implemented
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    -->
+  </body>
+</html>

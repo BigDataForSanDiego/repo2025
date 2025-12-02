@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "SafeSleepSites",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1.0, "name": "O Lot" }, "geometry": { "type": "Point", "coordinates": [ -117.14669444, 32.72233333 ] } },
+{ "type": "Feature", "properties": { "id": 2.0, "name": "20th and B Street" }, "geometry": { "type": "Point", "coordinates": [ -117.144430, 32.720050] } } 
+]
+}

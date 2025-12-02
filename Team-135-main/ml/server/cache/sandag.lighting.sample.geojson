@@ -1,0 +1,12 @@
+{ "type":"FeatureCollection","features":[
+  { "type":"Feature","properties":{"name":"Well-lit zone A"},
+    "geometry":{"type":"Polygon","coordinates":[[
+      [-117.1705,32.7135],[-117.1545,32.7135],[-117.1545,32.7215],[-117.1705,32.7215],[-117.1705,32.7135]
+    ]]}
+  },
+  { "type":"Feature","properties":{"name":"Well-lit zone B"},
+    "geometry":{"type":"Polygon","coordinates":[[
+      [-117.1655,32.7180],[-117.1560,32.7180],[-117.1560,32.7240],[-117.1655,32.7240],[-117.1655,32.7180]
+    ]]}
+  }
+]}

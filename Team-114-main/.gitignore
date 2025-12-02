@@ -1,0 +1,69 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+
+#temp readme
+rd.md
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase credentials dont leak pls
+src/resourcify-adminapi.json
+resourcify-adminapi.json
+*adminapi.json
+firebase-adminsdk-*.json
+
+# Other sensitive files
+service-account-key.json
+google-credentials.json
+
+# Build outputs
+build/
+.vercel
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+coverage/
+.nyc_output/
+*.test.js.snap
+
+e.ps1

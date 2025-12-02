@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VoiceLink - Mic Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b1220; --card:#141c2f; --text:#e8eefc; --muted:#aab7d4; --accent:#8ab4ff; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:Inter,system-ui,Segoe UI,Arial; color:var(--text); background:linear-gradient(180deg,#0b1220,#0f1730 50%,#0b1220); }
+    .wrap{ max-width:900px; margin:0 auto; padding:32px 16px; }
+    h1{ font-size:28px; margin:0 0 8px; }
+    p.lead{ color:var(--muted); margin-top:0; }
+
+    .toolbar{ display:flex; gap:12px; align-items:center; margin:16px 0 8px; }
+    #micBtn{ border:2px solid var(--accent); background:transparent; color:var(--text); padding:10px 14px; border-radius:999px; cursor:pointer; }
+    #micBtn.on{ background:var(--accent); color:#061229; }
+
+    .searchbar{ display:flex; gap:10px; align-items:center; margin:8px 0 16px; }
+    .searchbar input{
+      flex:1; min-width:0;
+      padding:12px 14px; border-radius:12px; border:1px solid #2a3550; background:#0f1930; color:var(--text);
+      outline:none;
+    }
+    .btn{ padding:10px 14px; border-radius:10px; border:1px solid #2a3550; background:#1a2440; color:var(--text); cursor:pointer; }
+    .btn.secondary{ background:#14203b; }
+
+    .panel{ background:var(--card); border:1px solid #263152; border-radius:16px; padding:16px; margin:12px 0; }
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:12px; }
+    .card{ background:#101a30; border:1px solid #233055; border-radius:14px; padding:14px; }
+    a{ color:var(--accent); text-decoration:none; }
+
+    .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .chip{ padding:8px 12px; border-radius:999px; border:1px solid #2a3550; background:#1a2440; color:#e8eefc; cursor:pointer; }
+    .chip:hover{ background:#22305a; }
+
+    .muted{ color:var(--muted); }
+
+    @media (max-width:620px){
+      .searchbar{ flex-direction:column; align-items:stretch; }
+      .searchbar button{ width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🎙️ VoiceLink</h1>
+    <p class="lead">Tap the mic to start/stop. Ask: <em>“Where is the nearest shelter?”</em> We’ll use your location (or ask for a ZIP) and show the closest options.</p>
+
+    <!-- Row 1: mic only -->
+    <div class="toolbar">
+      <button id="micBtn" onclick="toggleMic()">Tap to speak</button>
+      <span id="recStatus" class="muted"></span>
+    </div>
+
+    <!-- Row 2: search bar below -->
+    <div class="searchbar">
+      <input id="need" placeholder="Type what you need (e.g., emergency shelter, food, mental health, restroom)" />
+      <button class="btn" id="searchBtn">Search</button>
+    </div>
+
+    <div class="panel">
+      <strong>Heard:</strong>
+      <div id="transcript" style="min-height:28px; margin-top:6px;" class="muted"></div>
+      <div id="log" style="margin-top:8px; font-size:13px; color:#9fb1da;"></div>
+    </div>
+
+    <div id="results" class="panel">
+      <em>Results will appear here.</em>
+    </div>
+
+    <div class="panel" style="font-size:14px;" class="muted">
+      Tip: If the browser blocks location, we'll ask for a ZIP and look up coordinates on the server.
+    </div>
+  </div>
+
+  <script>
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const synth = window.speechSynthesis;
+
+  let recognition = null, listening = false, lastTranscript = "", recTimer = null, recSeconds = 0;
+
+  function log(msg){ document.getElementById("log").textContent = msg; }
+  function setStatus(t){ document.getElementById("recStatus").textContent = t || ""; }
+  function speak(text){ if (!synth) return; const u = new SpeechSynthesisUtterance(text); synth.cancel(); synth.speak(u); }
+
+  async function reverseGeocode(lat, lon){
+    const url = new URL("https://nominatim.openstreetmap.org/reverse");
+    url.searchParams.set("lat", lat);
+    url.searchParams.set("lon", lon);
+    url.searchParams.set("format", "jsonv2");
+    url.searchParams.set("addressdetails", "1");
+
+    const resp = await fetch(url.toString(), {
+      headers: { "Accept": "application/json" }
+    });
+    if (!resp.ok) throw new Error(`Nominatim failed: ${resp.status}`);
+    const data = await resp.json();
+    return {
+      display_name: data.display_name || "",
+      address: data.address || {},
+      raw: data
+    };
+  }
+
+  async function getLocation(){
+    return new Promise((resolve)=>{
+      if (!navigator.geolocation) return resolve(null);
+      navigator.geolocation.getCurrentPosition(
+        pos => resolve({lat: pos.coords.latitude, lon: pos.coords.longitude}),
+        () => resolve(null),
+        {enableHighAccuracy: true, timeout: 8000}
+      );
+    });
+  }
+
+  async function findMatches(needText){
+    let coords = await getLocation();
+    if (!coords) {
+      const zip = prompt("Please enter your 5-digit ZIP code:");
+      if (!zip) { alert("No location provided."); return; }
+      const r = await fetch("/zip_to_latlon?zip="+encodeURIComponent(zip));
+      if (!r.ok) { alert("Couldn't resolve ZIP. Try 92101, 92103, etc."); return; }
+      coords = await r.json();
+      if (!coords.lat) { alert("Invalid ZIP. Try again."); return; }
+    }
+
+    let originAddress = null;
+    try {
+      const g = await reverseGeocode(coords.lat, coords.lon);
+      originAddress = g.display_name || null;
+      if (originAddress) log(`Location: ${originAddress}`);
+    } catch (e) {
+      console.warn(e);
+      log(`Using coordinates: ${coords.lat.toFixed(5)}, ${coords.lon.toFixed(5)}`);
+    }
+
+    const payload = { need: needText, lat: coords.lat, lon: coords.lon };
+    log("Searching for: " + JSON.stringify(payload));
+
+    const resp = await fetch("/match", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(payload)
+    });
+    if (!resp.ok) { alert("Request failed. Is the Flask server running?"); return; }
+    const data = await resp.json();
+
+    data.origin = data.origin || {};
+    data.origin.lat = data.origin.lat ?? coords.lat;
+    data.origin.lon = data.origin.lon ?? coords.lon;
+    if (originAddress) data.origin.address = originAddress;
+
+    renderResults(data);
+  }
+
+  function renderResults(data){
+    const out = document.getElementById("results");
+    out.innerHTML = "";
+
+    if (data.needs_confirmation) {
+      const msg = document.createElement("p");
+      msg.textContent = "I couldn't understand your request. What kind of help do you need?";
+      out.appendChild(msg);
+
+      const wrap = document.createElement("div");
+      wrap.className = "chips";
+      (data.suggested_categories || ["emergency shelter","food","mental health","safe parking","showers"]).forEach(cat=>{
+        const b = document.createElement("button");
+        b.className = "chip";
+        b.textContent = cat;
+        b.onclick = ()=> findMatches(cat);
+        wrap.appendChild(b);
+      });
+      out.appendChild(wrap);
+      return;
+    }
+
+    const { category, results, origin } = data;
+    const n = (results && results.length) ? results.length : 0;
+    const showAvailability = (String(category || "").toLowerCase() === "emergency shelter");
+
+    if (!n) { out.innerHTML = "<p>No results found.</p>"; return; }
+
+    const head = document.createElement("h3");
+    head.textContent = `Top ${n} for "${category}"`;
+    out.appendChild(head);
+
+    if (data.requested_k && n < data.requested_k) {
+      const note = document.createElement("p");
+      note.className = "muted";
+      note.textContent = `Only ${n} providers matched near you.`;
+      out.appendChild(note);
+    }
+
+    const list = document.createElement("div"); list.className = "grid";
+    results.forEach(r=>{
+      const distText = (r.distance_miles !== undefined && r.distance_miles !== null)
+        ? `${r.distance_miles} mi`
+        : "N/A";
+
+      let availabilityLine = "";
+      if (showAvailability && r.availability) {
+        const a = r.availability;
+        const beds = a.beds_available;
+        const tot = a.beds_total ?? "?";
+        const isStale = a.stale;
+        const lu = a.last_updated ? new Date(a.last_updated).toLocaleString() : "unknown time";
+
+        let availText = "";
+
+        if (beds !== null && beds !== undefined) {
+          availText = `${beds} of ${tot} beds`;
+        } else {
+          availText = "No data";
+        }
+
+        if (isStale) {
+          availText += `. May be outdated (last updated ${lu})`;
+        }
+
+        if (a.notes) {
+          availText += ` : ${a.notes}`;
+        }
+
+        availabilityLine = `<p><strong>Availability:</strong> ${availText}</p>`;
+      }
+
+
+      const card = document.createElement("div"); card.className = "card";
+      card.innerHTML = `
+        <h4>${r.name}</h4>
+        <p><strong>Phone:</strong> <a href="tel:${r.phone}">${r.phone}</a></p>
+        <p><strong>Address:</strong> <a target="_blank" href="https://www.google.com/maps/dir/${encodeURIComponent(origin?.address || '')}/${encodeURIComponent(r.address)}">${r.address}</a></p>
+        <p><strong>Hours:</strong> ${r.hours}</p>
+        <p><strong>Eligibility:</strong> ${r.eligibility}</p>
+        <p><strong>Distance:</strong> ${distText}</p>
+        ${availabilityLine}
+      `;
+      list.appendChild(card);
+    });
+    out.appendChild(list);
+
+    if (origin && ((origin.lat && origin.lon) || origin.address)) {
+      const dbg = document.createElement("p");
+      dbg.className = "muted";
+      dbg.style.marginTop = "8px";
+      dbg.style.fontSize = "12px";
+      const parts = [];
+      if (origin.lat && origin.lon) parts.push(`${Number(origin.lat).toFixed(4)}, ${Number(origin.lon).toFixed(4)}`);
+      if (origin.address) parts.push(origin.address);
+      dbg.textContent = `From: ${parts.join(" • ")}`;
+      out.appendChild(dbg);
+    }
+
+    const speakBtn = document.createElement("button");
+    speakBtn.textContent = "Speak results";
+    speakBtn.className = "btn secondary";
+    speakBtn.onclick = ()=>{
+      const lines = results.map((r,i)=>{
+        const a = r.availability;
+        const bedLine = (showAvailability && a && !a.stale && a.beds_available != null)
+          ? `, ${a.beds_available} beds available`
+          : "";
+        return `Option ${i+1}: ${r.name}${bedLine}. Phone ${r.phone}. Address ${r.address}.`;
+      });
+      speechSynthesis.cancel();
+      speechSynthesis.speak(new SpeechSynthesisUtterance(
+        `Here are the top ${n} ${category} options. ` + lines.join(" ")
+      ));
+    };
+    out.appendChild(speakBtn);
+  }
+
+  function ensureRecognizer(){
+    if (recognition) return recognition;
+    if (!SpeechRecognition){ alert("Speech recognition not supported. Try Chrome."); return null; }
+    recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = true;
+    recognition.continuous = false; // short-stop behavior is fine
+
+    recognition.onresult = (e)=>{
+      let interim = "";
+      for (let i=e.resultIndex; i<e.results.length; i++){
+        const t = e.results[i][0].transcript;
+        if (e.results[i].isFinal) lastTranscript += t + " "; else interim += t;
+      }
+      document.getElementById("transcript").textContent = (lastTranscript + interim).trim();
+    };
+
+    recognition.onend = async ()=>{
+      stopTimer(); listening = false; document.getElementById("micBtn").classList.remove("on"); setStatus("");
+      const finalText = document.getElementById("transcript").textContent.trim();
+      if (!finalText){ log("No speech captured. Tap the mic and try again."); return; }
+
+      let need = finalText; const low = finalText.toLowerCase();
+      if (low.includes("shelter")) need = "emergency shelter";
+      else if (low.includes("food") || low.includes("hungry")) need = "food";
+      else if (low.includes("parking")) need = "safe parking";
+      else if (low.includes("mental")) need = "mental health";
+      else if (low.includes("washroom") || low.includes("restroom") || low.includes("toilet") || low.includes("bathroom") || low.includes("shower") || low.includes("hygiene")) need = "showers";
+
+      await findMatches(need);
+    };
+
+    recognition.onerror = (e)=>{
+      stopTimer(); listening=false; document.getElementById("micBtn").classList.remove("on"); setStatus("");
+      log("Mic error: " + (e?.error || "unknown"));
+    };
+    return recognition;
+  }
+
+  function startTimer(){ recSeconds=0; setStatus("Recording: 0s"); recTimer=setInterval(()=>{ recSeconds++; setStatus(`Recording: ${recSeconds}s`); },1000); }
+  function stopTimer(){ if (recTimer){ clearInterval(recTimer); recTimer=null; } }
+
+  function toggleMic(){
+    const rec = ensureRecognizer(); if (!rec) return;
+    const btn = document.getElementById("micBtn");
+    if (listening){ rec.stop(); } else {
+      lastTranscript=""; document.getElementById("transcript").textContent="";
+      listening=true; btn.classList.add("on"); startTimer(); log("Listening... tap again to stop.");
+      rec.start();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    document.getElementById("searchBtn").onclick = ()=> findMatches(document.getElementById("need").value);
+    document.getElementById("need").addEventListener("keydown", (e)=>{
+      if (e.key === "Enter") { e.preventDefault(); document.getElementById("searchBtn").click(); }
+    });
+  });
+</script>
+</body>
+</html>

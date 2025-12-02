@@ -1,0 +1,98 @@
+const API_BASE = 'http://localhost:8080/v1';
+
+// Map base
+const map = L.map('map').setView([32.7157, -117.1611], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19, attribution:'&copy; OpenStreetMap'}).addTo(map);
+
+// Layers
+const resourcesLayer = L.layerGroup().addTo(map);
+let routeLayer = L.geoJSON(null, { style: f => ({ color:'#25D366', weight:5, opacity:0.9 }) }).addTo(map);
+
+// UI refs
+const elOrig = document.getElementById('orig');
+const elDest = document.getElementById('dest');
+const elMeta = document.getElementById('routeMeta');
+
+// Helpers
+function isNum(n){ return Number.isFinite(n); }
+function parseLatLng(text){
+  if(!text) return null;
+  const [lat, lng] = text.split(',').map(s=>parseFloat(s.trim()));
+  if(!isNum(lat) || !isNum(lng)) return null;
+  return { lat, lng };
+}
+function badge(t){ return `<span class="badge">${t}</span>`; }
+
+// Load & draw resources
+async function loadResources(){
+  const r = await fetch(`${API_BASE}/resources?t=${Date.now()}`);
+  const data = await r.json();
+  resourcesLayer.clearLayers();
+
+  const pts = (data.results||[]).filter(d=>isNum(d.lat)&&isNum(d.lng));
+  const bounds = [];
+  pts.forEach(d=>{
+    const m = L.circleMarker([d.lat,d.lng],{radius:7,weight:1.5,fillOpacity:.9});
+    const name = d.name||'Unnamed';
+    const type = d.type||'resource';
+    const status = d.status?badge(d.status):'';
+    const last = d.last_verified_at?new Date(d.last_verified_at).toLocaleDateString():'';
+    const cap = (d.capacity_available!=null)?`${d.capacity_available}`:'—';
+    m.bindPopup(`<b>${name}</b><br>${type} ${status}<br>${d.address?d.address+'<br>':''}${d.contact?d.contact+'<br>':''}Verified: ${last}<br>Capacity: ${cap}`);
+    m.addTo(resourcesLayer);
+    bounds.push([d.lat,d.lng]);
+  });
+  if(bounds.length) map.fitBounds(bounds,{padding:[40,40]});
+}
+
+// Safe route
+async function routeSafe(){
+  const A = parseLatLng(elOrig.value);
+  const B = parseLatLng(elDest.value);
+  if(!A || !B){ alert('Enter lat,lng pairs for origin and destination'); return; }
+  const url = `${API_BASE}/route/safe?origin=${A.lat},${A.lng}&dest=${B.lat},${B.lng}&t=${Date.now()}`;
+  const r = await fetch(url);
+  if(!r.ok){ alert('Routing failed'); return; }
+  const data = await r.json();
+  routeLayer.clearLayers();
+  if(data.route){ routeLayer.addData(data.route); }
+  const dist = data.distance_m?`${(data.distance_m/1000).toFixed(2)} km`:'';
+  const mins = data.duration_s?`${Math.round(data.duration_s/60)} min`:'';
+  elMeta.textContent = `${dist} ${mins} • risk ${(data.risk??'–')}`;
+}
+
+// Map-pick helpers
+let picking = null;
+function beginPick(which){
+  picking = which;
+  map.getContainer().style.cursor = 'crosshair';
+}
+map.on('click', e=>{
+  if(!picking) return;
+  const v = `${e.latlng.lat.toFixed(6)},${e.latlng.lng.toFixed(6)}`;
+  if(picking==='orig') elOrig.value = v; else elDest.value = v;
+  picking = null;
+  map.getContainer().style.cursor = '';
+});
+
+// Geolocate
+async function useMyLocation(){
+  if(!navigator.geolocation){ alert('Geolocation not available'); return; }
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const { latitude, longitude } = pos.coords;
+    elOrig.value = `${latitude.toFixed(6)},${longitude.toFixed(6)}`;
+    map.setView([latitude, longitude], 14);
+  }, ()=> alert('Could not get your location'));
+}
+
+// Wire UI
+document.getElementById('btnMyLoc').onclick = useMyLocation;
+document.getElementById('btnPickOrig').onclick = ()=> beginPick('orig');
+document.getElementById('btnPickDest').onclick = ()=> beginPick('dest');
+document.getElementById('btnRoute').onclick = routeSafe;
+document.getElementById('toggleResources').onchange = e=>{
+  if(e.target.checked){ map.addLayer(resourcesLayer); } else { map.removeLayer(resourcesLayer); }
+};
+
+// Init
+loadResources();

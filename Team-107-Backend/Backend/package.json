@@ -1,0 +1,26 @@
+{
+  "name": "anchorpoint",
+  "version": "1.0.0",
+  "description": "A housing retention system which analyzes client surveys to support them through their housing programs and prevent them from falling back into homelessness.",
+  "homepage": "https://github.com/BigDataForSanDiego/Team-107#readme",
+  "bugs": {
+    "url": "https://github.com/BigDataForSanDiego/Team-107/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigDataForSanDiego/Team-107.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

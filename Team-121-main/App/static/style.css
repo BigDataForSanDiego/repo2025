@@ -1,0 +1,129 @@
+/* Simulated iPhone Frame */
+.iphone-simulator {
+    width: 420px;
+    height: 800px;
+    border: 16px solid #000;
+    border-radius: 40px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/* Status Bar */
+.status-bar {
+    height: 20px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+/* App content */
+.app {
+    flex: 1;
+    background: linear-gradient(180deg, #4e54c8, #8f94fb);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+/* Button */
+button {
+    background: #00c6ff;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Result Card */
+#result {
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: white;
+    color: #333;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.card h2 {
+    color: #0072ff;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #0072ff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.map-btn:hover {
+    background: #0057cc;
+}
+
+.error {
+    color: #ffdddd;
+    background: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

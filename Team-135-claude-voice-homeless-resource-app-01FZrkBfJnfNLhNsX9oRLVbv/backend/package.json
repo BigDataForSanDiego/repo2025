@@ -1,0 +1,30 @@
+{
+  "name": "homebase-backend",
+  "version": "1.0.0",
+  "description": "Supabase backend for Homebase civic-access kiosk",
+  "type": "module",
+  "scripts": {
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "status": "supabase status",
+    "db:reset": "supabase db reset",
+    "db:push": "supabase db push",
+    "functions:serve": "supabase functions serve",
+    "functions:deploy": "supabase functions deploy"
+  },
+  "keywords": [
+    "supabase",
+    "edge-functions",
+    "deno",
+    "postgis",
+    "civic-tech"
+  ],
+  "author": "Team 135",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  }
+}

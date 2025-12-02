@@ -1,0 +1,4 @@
+service_name,service_category,latitude,longitude,hours_of_operation,address,contact_phone,service_status,last_verified
+Father Joe's Village,Food & Shelter,32.710,-117.156,"24/7","1501 Imperial Ave, San Diego, CA","(619) 233-8500",Open,2024-10-01
+Neil Good Day Center,Hygiene,32.717,-117.151,"8am-4pm","299 17th St, San Diego, CA","(619) 233-8500",Open,2024-10-01
+PATH Connections Housing,Shelter,32.720,-117.160,"24/7","1250 6th Ave, San Diego, CA","(619) 810-8600",Open,2024-10-01

@@ -1,0 +1,1241 @@
+[
+  {
+    "name": "4S Ranch Community Park",
+    "address": "16118D 4S Ranch Parkway, San Diego, CA 92127",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Attached to Gymnasium",
+    "hours": "Sunrise to sunset, 7 days a week"
+  },
+  {
+    "name": "4S Ranch Liberty Park",
+    "address": "17750 Hunters Ridge Road, San Diego, CA 92127",
+    "restroom_type": "1 Portable",
+    "location": "Northeast of basketball courts",
+    "hours": "24 hours, 7 days a week"
+  },
+  {
+    "name": "4S Ranch Patriot",
+    "address": "10502 Paseo de Linda, San Diego, CA 92127",
+    "restroom_type": "1 Portable",
+    "location": "Located near playground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "4S Ranch Sports Park",
+    "address": "16118D 4S Ranch Parkway, San Diego, CA 92127",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Attached to Concession",
+    "hours": "7am - 10pm, 7 days a week"
+  },
+  {
+    "name": "Agua Caliente",
+    "address": "39555 Great Southern Overland Stage Route of 1849, Julian CA 92036",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Center of Campground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Agua Caliente",
+    "address": "39555 Great Southern Overland Stage Route of 1849, Julian CA 92036",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Center of Campground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Agua Caliente",
+    "address": "39555 Great Southern Overland Stage Route of 1849, Julian CA 92036",
+    "restroom_type": "Spa Restroom",
+    "location": "Spa Facility",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Agua Caliente",
+    "address": "39555 Great Southern Overland Stage Route of 1849, Julian CA 92036",
+    "restroom_type": "Full Hookup Restroom 1",
+    "location": "East Side of Campground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Agua Caliente",
+    "address": "39555 Great Southern Overland Stage Route of 1849, Julian CA 92036",
+    "restroom_type": "Full Hookup Restroom 2",
+    "location": "East Side of Campground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Agua Caliente",
+    "address": "39555 Great Southern Overland Stage Route of 1849, Julian CA 92036",
+    "restroom_type": "Ranger Station Restroom (Public Restroom)",
+    "location": "Back of Ranger Station",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Barnett Ranch Preserve",
+    "address": "1500 Deviney Ln., Ramona, CA 92065",
+    "restroom_type": "1 Portable w/hand washing station",
+    "location": "Staging Area",
+    "hours": "Sunrise to sunset"
+  },
+  {
+    "name": "Borrego Springs",
+    "address": "2620 Country Club Rd., Borrego Springs, CA 92004",
+    "restroom_type": "2 Rooms, gender specific",
+    "location": "Sheriff's Station",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Boulder Oaks",
+    "address": "14494 Mussey Grade Rd. Ramona, CA 92065",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Park Office",
+    "hours": "Currently closed to public"
+  },
+  {
+    "name": "Cactus",
+    "address": "10610 Ashwood St., Lakeside, CA 92040",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Near Volunteer Pad",
+    "hours": "7a.m. - 30 minutes before park close"
+  },
+  {
+    "name": "Cactus",
+    "address": "10610 Ashwood St., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near Ballfields",
+    "hours": "7a.m. - 30 minutes before park close"
+  },
+  {
+    "name": "Clemmens Lane",
+    "address": "344 Clemmens Lane, Fallbrook, CA 92028",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Park Entrance",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Cole Grade",
+    "address": "28575 Cole Grade Rd., Valley Center, CA 92082",
+    "restroom_type": "1 Portable",
+    "location": "Parking Lot",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Collier",
+    "address": "626 E Street, Ramona, CA 92065",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Center of Park",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Dianne Jacob Lakeside Equestrian Park",
+    "address": "11055 Moreno Ave., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Near banquet hall building",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Dianne Jacob Lakeside Equestrian Park",
+    "address": "11055 Moreno Ave., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near banquet hall building",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Area 1",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Area 1",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Area 2",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Main Campground",
+    "hours": "24hrs/7 days a week"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Main Campground",
+    "hours": "24hrs/7 days a week"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Caravan Area",
+    "hours": "24hrs/7 days a week"
+  },
+  {
+    "name": "Dos Picos",
+    "address": "17953 Dos Picos Park Rd., Ramona, CA 92065",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Caravan Area",
+    "hours": "24hrs/7 days a week"
+  },
+  {
+    "name": "Eastview",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Next to splash pad",
+    "hours": "9:30 am to sunset"
+  },
+  {
+    "name": "El Capitan",
+    "address": "13775 Blue Sky Ranch Rd., Lakeside, CA 92040",
+    "restroom_type": "Double Vault Toilet, Gender Neutral",
+    "location": "Upper Staging Area",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "El Monte",
+    "address": "15805 El Monte Rd., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "East (Areas 1-3)",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "El Monte",
+    "address": "15805 El Monte Rd., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "East (Areas 1-3)",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "El Monte",
+    "address": "15805 El Monte Rd., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Center (Areas 4 & A)",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "El Monte",
+    "address": "15805 El Monte Rd., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Center (Areas 4 & A)",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "El Monte",
+    "address": "15805 El Monte Rd., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "West (Areas 5-8)",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Eucalyptus",
+    "address": "9125 Edgewood Drive, Spring Valley, CA 91977",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near Pavilion",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Fallbrook Community Center",
+    "address": "341 Heald Lane, Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Main Hallway",
+    "hours": "9 a.m. – 6:30 p.m., Monday – Friday"
+  },
+  {
+    "name": "Fallbrook Community Center",
+    "address": "341 Heald Lane, Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "North Room",
+    "hours": "9 a.m. – 6:30 p.m., Monday – Friday"
+  },
+  {
+    "name": "Fallbrook Community Park",
+    "address": "341 Heald Lane, Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Picnic Area",
+    "hours": "9 a.m. – 6:30 p.m., Monday – Friday"
+  },
+  {
+    "name": "Felicita",
+    "address": "742 Clarence Lane, Escondido, CA 92029",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Next To Area 1 Stage",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Felicita",
+    "address": "742 Clarence Lane, Escondido, CA 92029",
+    "restroom_type": "1 Women's Restroom",
+    "location": "Attached To Women's Restroom",
+    "hours": "Reservations only"
+  },
+  {
+    "name": "Felicita",
+    "address": "742 Clarence Lane, Escondido, CA 92029",
+    "restroom_type": "6 Gender Neutral Restrooms",
+    "location": "Next To Area 6 Pavilion",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Felicita",
+    "address": "742 Clarence Lane, Escondido, CA 92029",
+    "restroom_type": "Auxiliary Restrooms",
+    "location": "Next To Area 6 BBQ Island",
+    "hours": "Reservations only"
+  },
+  {
+    "name": "Felicita",
+    "address": "742 Clarence Lane, Escondido, CA 92029",
+    "restroom_type": "Women's Restroom",
+    "location": "Next To Pavilion",
+    "hours": "Reservations only"
+  },
+  {
+    "name": "Felicita",
+    "address": "742 Clarence Lane, Escondido, CA 92029",
+    "restroom_type": "Gender Neutral Restroom",
+    "location": "Next To Pavilion",
+    "hours": "Reservations only"
+  },
+  {
+    "name": "Flinn Springs",
+    "address": "14787 Olde Highway 80, El Cajon 92021",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "East end of park between area 2 and 3",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Flinn Springs",
+    "address": "14787 Olde Highway 80, El Cajon 92021",
+    "restroom_type": "2 Single Gender Neutral Restrooms",
+    "location": "East end of park between area 2 and 3",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Flinn Springs",
+    "address": "14787 Olde Highway 80, El Cajon 92021",
+    "restroom_type": "4 Single Gender Neutral Restrooms",
+    "location": "Center of park at Area 1",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Flinn Springs",
+    "address": "14787 Olde Highway 80, El Cajon 92021",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Bride/Grooms changing room",
+    "hours": "Reservations only"
+  },
+  {
+    "name": "Flinn Springs",
+    "address": "14787 Olde Highway 80, El Cajon 92021",
+    "restroom_type": "1 Single Gender Neutral Restroom",
+    "location": "Area 4 west end of park",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Four Gee Park",
+    "address": "16964 Four Gee Road, San Diego, CA 92127",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Near Park Entrance",
+    "hours": "8:00 am - sunset"
+  },
+  {
+    "name": "Goodland Acres",
+    "address": "8848 Troy Street, Spring Valley, CA 91977",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near Playground",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Guajome Regional",
+    "address": "3000 Guajome Lake Road, Oceanside, CA 92057",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Upper Day Use Area",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Guajome Regional",
+    "address": "3000 Guajome Lake Road, Oceanside, CA 92057",
+    "restroom_type": "2 Gender Specific Restrooms with Showers",
+    "location": "Campground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Guajome Regional",
+    "address": "3000 Guajome Lake Road, Oceanside, CA 92057",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Lower Day Use Area",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Harmony Grove Village - 4th of July Park",
+    "address": "2815 Starry Night Dr., Escondido, CA 92029",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Next to Large Pavilion Women's",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Harmony Grove Village - Equestrian Park",
+    "address": "2822 Harmony Grove Rd., Escondido, CA 92029",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Next to Equestrian Area Parking Lot",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Harmony Grove Village- Community Park",
+    "address": "2982 Harmony Grove Rd, Escondido, CA 92029",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Next to Lawn Area and Playground",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Harvest County Park",
+    "address": "27733 Park Circle Way Valley Center, CA 92082",
+    "restroom_type": "Restroom/concession building 4 unisex restrooms",
+    "location": "Main ballfield area",
+    "hours": "8am - sundown 365 days a year"
+  },
+  {
+    "name": "Hellhole Canyon Preserve",
+    "address": "19324 Santee Lane, Valley Center, CA 92082",
+    "restroom_type": "2 Vault Toilets - Gender Neutral",
+    "location": "Staging Area",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Heritage",
+    "address": "2454 Heritage Park Row, San Diego, CA 92110",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Temple Beth",
+    "hours": "3-hour time slots for special events - by reservation only"
+  },
+  {
+    "name": "Heritage",
+    "address": "2454 Heritage Park Row, San Diego, CA 92110",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Senlis Cottage",
+    "hours": "Sunrise to sunset"
+  },
+  {
+    "name": "Hilton Head",
+    "address": "1605 Hilton Head Road, El Cajon, CA 92019",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "West end of park near parking lot",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Horse Creek Ridge Sports Park",
+    "address": "240 Gold Palomino Way, Fallbrook, CA 92028",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Ballfield area",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Jess Martin",
+    "address": "2955 Hwy 79, Julian, CA 92036",
+    "restroom_type": "4 Vault Toilets - Gender Neutral",
+    "location": "Middle of Parking Lot",
+    "hours": "Sunrise to sunset"
+  },
+  {
+    "name": "Julian Pioneer Museum",
+    "address": "2811 Washington St., Julian, CA 92036",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Adjacent to museum",
+    "hours": "Monday - Wednesday closed, Open Thursday - Sunday, 10 a.m. - 4 p.m."
+  },
+  {
+    "name": "La Chappa Fields",
+    "address": "13145 Willow Road, Lakeside CA 92040",
+    "restroom_type": "2 Portable Restrooms w/Handwashing Station",
+    "location": "Next to Concession Building",
+    "hours": "Games/Events Only"
+  },
+  {
+    "name": "Lake Morena",
+    "address": "2550 Lake Morena Dr., Campo, CA 91906",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Center of Campground",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Lake Morena",
+    "address": "2550 Lake Morena Dr., Campo, CA 91906",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Next to Ranger Station",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Lake Morena",
+    "address": "2550 Lake Morena Dr., Campo, CA 91906",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Cabin Access Road",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Lake Morena",
+    "address": "2550 Lake Morena Dr., Campo, CA 91906",
+    "restroom_type": "2 Portables",
+    "location": "Cabin Area",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Lake Morena",
+    "address": "2550 Lake Morena Dr., Campo, CA 91906",
+    "restroom_type": "1 Portable",
+    "location": "Dam Access Trail Parking Lot",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Lake Morena",
+    "address": "2550 Lake Morena Dr., Campo, CA 91906",
+    "restroom_type": "1 Portable",
+    "location": "Boat Launch Area",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Lakeside Baseball Fields",
+    "address": "10030 Marathon Parkway, Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Behind Concession stand",
+    "hours": "7 a.m. - 30 minutes before park close"
+  },
+  {
+    "name": "Lakeside Community Center",
+    "address": "9841 Vine Street, Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Inside Community Center",
+    "hours": "9 a.m. - 8 p.m (unless open due to event)"
+  },
+  {
+    "name": "Lakeside Teen Center",
+    "address": "9911 Vine Street, Lakeside, CA 92040",
+    "restroom_type": "2 Gender Neutral Restroom",
+    "location": "Inside Teen Center",
+    "hours": "Monday - Friday, 2:30pm - 6:30pm, Wednesday, 12:30pm - 5 pm (Restroom designated for teen participants only)"
+  },
+  {
+    "name": "Lamar",
+    "address": "3180 Bancroft Dr., Spring Valley, CA 91977",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Near Pavilion",
+    "hours": "9:30 a.m. to sunset (2 of 4 open during hours of operation)"
+  },
+  {
+    "name": "Lincoln Acres",
+    "address": "2830 Alta Dr., National City, CA 91950",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Near Ranger Office",
+    "hours": "9:30 a.m. - sunset"
+  },
+  {
+    "name": "Lincoln Acres",
+    "address": "2717 Granger Ave., National City, CA 91950",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Between Community Room and Library (DGS Facility)",
+    "hours": "9:30 a.m. - sunset"
+  },
+  {
+    "name": "Lindo Lake",
+    "address": "12660 Lindo Lane, Lakeside, CA",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Next to Toddler Playground",
+    "hours": "9:30 a.m. - 30 minutes before park sunset"
+  },
+  {
+    "name": "Lindo Lake",
+    "address": "12660 Lindo Lane, Lakeside, CA",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Next to skate park",
+    "hours": "9:30 a.m. - 30 minutes before park sunset"
+  },
+  {
+    "name": "Lindo Lake",
+    "address": "12660 Lindo Lane, Lakeside, CA",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Next to the Gated North Entrance",
+    "hours": "9:30 a.m. - 30 minutes before park sunset"
+  },
+  {
+    "name": "Live Oak",
+    "address": "2746 Reche Rd., Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Visitors Center",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Live Oak",
+    "address": "2746 Reche Rd., Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Middle of park next to playground",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Live Oak",
+    "address": "2746 Reche Rd., Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "West Parking Lot",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Live Oak",
+    "address": "2746 Reche Rd., Fallbrook, CA 92028",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Southwest corner of Reche Rd and Gird Rd",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Live Oak",
+    "address": "2746 Reche Rd., Fallbrook CA 92028",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Visitor Center",
+    "hours": "7 a.m. to sunset"
+  },
+  {
+    "name": "Los Penasquitos Adobe",
+    "address": "12122 Canyonside Park Drive, San Diego, CA 92129",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Museum Entrance",
+    "hours": "8 a.m. - 5 p.m."
+  },
+  {
+    "name": "Los Penasquitos Adobe",
+    "address": "12122 Canyonside Park Drive, San Diego, CA 92129",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Museum Entrance to right side",
+    "hours": "8 a.m. - 5 p.m."
+  },
+  {
+    "name": "Los Penasquitos Adobe",
+    "address": "12122 Canyonside Park Drive San Diego, CA 92129",
+    "restroom_type": "1 Portable",
+    "location": "Next to community garden",
+    "hours": "8 a.m. - 5 p.m."
+  },
+  {
+    "name": "Los Penasquitos Canyon County Preserve",
+    "address": "12020 Black Mountain Road, San Diego, CA 92129",
+    "restroom_type": "1 Portable",
+    "location": "Staging Area",
+    "hours": "8 a.m. - 5 p.m."
+  },
+  {
+    "name": "Mt. Gower",
+    "address": "17090 Gunn Stage Rd., Ramona, CA 92129",
+    "restroom_type": "Double Vault Toilet - Gender Neutral",
+    "location": "Staging area",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Nancy Jane",
+    "address": "120 North Park Dr., El Cajon, CA 92021",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Main park area",
+    "hours": "9:30 a.m. - 30 minutes before sunset"
+  },
+  {
+    "name": "Oakoasis",
+    "address": "12620 Wildcat Canyon Rd., Lakeside, CA 92040",
+    "restroom_type": "Double Vault Toilet - Gender Neutral",
+    "location": "Parking Lot",
+    "hours": "8 a.m. to sunset"
+  },
+  {
+    "name": "Oakoasis",
+    "address": "12620 Wildcat Canyon Rd., Lakeside, CA 92040",
+    "restroom_type": "Restroom/Shower Building",
+    "location": "Campground",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Old Ironsides",
+    "address": "326 Harbison Canyon Rd., El Cajon, CA. 92021",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Near building, upper end of park",
+    "hours": "9:30 a.m. - 30 minutes before sunset"
+  },
+  {
+    "name": "Otay Lakes",
+    "address": "2270 Wueste Road, Chula Vista, CA 91915",
+    "restroom_type": "4 Gender Neutral Restrooms",
+    "location": "Next to Picnic Area",
+    "hours": "9:30 a.m. - sunset"
+  },
+  {
+    "name": "Palomar Mountain",
+    "address": "21818 Crestline Rd., Palomar Mountain, CA 92060",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Main picnic area",
+    "hours": "8 a.m. - sunset"
+  },
+  {
+    "name": "Pine Valley",
+    "address": "28810 Old Highway 80, Pine Valley, VA 91962",
+    "restroom_type": "2 Family Restrooms",
+    "location": "Park Entrance",
+    "hours": "24 hours/7days a week"
+  },
+  {
+    "name": "Pine Valley",
+    "address": "28810 Old Highway 80, Pine Valley, CA 91962",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Park Entrance",
+    "hours": "9:30 a.m. to half hour before sunset"
+  },
+  {
+    "name": "Pine Valley",
+    "address": "28810 Old Highway 80, Pine Valley, VA 91962",
+    "restroom_type": "1 Portable",
+    "location": "Ballfield Area",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Pine Valley",
+    "address": "28810 Old Highway 80, Pine Valley, VA 91962",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Ballfield Area",
+    "hours": "Open March thru Nov 7/24; 9:30 a.m. to half hour before sunset. Closed for Dec to March."
+  },
+  {
+    "name": "Potrero",
+    "address": "24800 Potrero Park Dr., Potrero, CA 91963",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Day Use Area (South)",
+    "hours": "24 hours/7days a week"
+  },
+  {
+    "name": "Potrero",
+    "address": "24800 Potrero Park Dr., Potrero, CA 91963",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Day Use Area (Central)",
+    "hours": "24 hours/7days a week"
+  },
+  {
+    "name": "Potrero",
+    "address": "24800 Potrero Park Dr., Potrero, CA 91963",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Campground Area",
+    "hours": "24 hours/7days a week"
+  },
+  {
+    "name": "Provence House",
+    "address": "4370 Sweetwater Rd., Bonita, CA 91902",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Main House",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Provence House",
+    "address": "4370 Sweetwater Rd., Bonita, CA 91902",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Groom's Room",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Provence House",
+    "address": "4370 Sweetwater Rd., Bonita, CA 91902",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Bride's Room",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Rainbow",
+    "address": "5157 Fifth St., Rainbow, CA 92028",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Middle of the park behind the playground structure",
+    "hours": "8 a.m. - Sunset"
+  },
+  {
+    "name": "Ramona Grasslands Preserve",
+    "address": "17430 Highland Valley Road, Ramona, CA 92065",
+    "restroom_type": "2 Portables - Gender Neutral",
+    "location": "Staging Area",
+    "hours": "Sunrise to sunset"
+  },
+  {
+    "name": "Rancho Guajome Adobe",
+    "address": "2210 N. Santa Fe Ave., Vista, CA 92083",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Near the adobe ranch house",
+    "hours": "7 a.m. - Sunset"
+  },
+  {
+    "name": "Rancho Guajome Adobe",
+    "address": "2206 N. Santa Fe Ave., Vista, CA 92083",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Inside park office, unisex",
+    "hours": "8 a.m. to 5:30p.m."
+  },
+  {
+    "name": "Robert Adams",
+    "address": "28751 Cole Grade Rd., Valley Center, 92082",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near Special Events Area/Pool",
+    "hours": "Sunrise to Sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Upper Park near Toddler Playground",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Upper Park near Area 1",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Upper Park near ADA Playground",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Upper Park near Miracle Field",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Family Restrooms",
+    "location": "Upper Park near Miracle Field",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Upper Park near Area 4",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Upper Park near Area 4",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Lower Park near Gazebo",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Lower Park near Area 5",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Lower Park near Area 7",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "San Dieguito",
+    "address": "1628 Lomas Santa Fe Dr., Del Mar, CA 92014",
+    "restroom_type": "1 Gender Neutral",
+    "location": "Scout House",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "San Elijo Nat Ctr",
+    "address": "2710 Manchester Ave., Cardiff, CA 92007",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Inside Building",
+    "hours": "9 a.m. to 5 p.m."
+  },
+  {
+    "name": "San Elijo Nat Ctr",
+    "address": "2710 Manchester Ave., Cardiff, CA 92007",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Outside Building",
+    "hours": "9 a.m. to 5 p.m."
+  },
+  {
+    "name": "San Elijo Nat Ctr",
+    "address": "2710 Manchester Ave., Cardiff, CA 92007",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Upstairs Restroom",
+    "hours": "9 a.m. to 5 p.m."
+  },
+  {
+    "name": "Santa Ysabel East (Farmer Staging)",
+    "address": "500 Farmer Rd, Julian Ca 92036",
+    "restroom_type": "2 Portable Restrooms",
+    "location": "In staging area",
+    "hours": "Sunrise to Sunset"
+  },
+  {
+    "name": "Santa Ysabel Nature Center",
+    "address": "22135 Highway 79, Santa Ysabel, 92070",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Inside Building",
+    "hours": "Nov-March: Mon-Thur, 10 a.m. - 5p.m.; Fri-Sun, 9 a.m. - 5 p.m. April-Oct: Mon-Thurs, 10 a.m. - 6 p.m.; Fri-Sun, 9 a.m. - 7 p.m."
+  },
+  {
+    "name": "Santa Ysabel Nature Center",
+    "address": "22135 Highway 79, Santa Ysabel, 92070",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Inside Building",
+    "hours": "Nov-March: Mon-Thur, 10 a.m. - 5p.m.; Fri-Sun, 9 a.m. - 5 p.m. April-Oct: Mon-Thurs, 10 a.m. - 6 p.m.; Fri-Sun, 9 a.m. - 7 p.m."
+  },
+  {
+    "name": "Santa Ysabel West Staging",
+    "address": "29300 Hwy78, Santa Ysabel Ca 92070",
+    "restroom_type": "2 Portable Restroom",
+    "location": "In staging area",
+    "hours": "Sunrise to Sunset"
+  },
+  {
+    "name": "Scibilla Field",
+    "address": "Cole Grade Rd. and School Bus Lane, Valley Center, CA 92082",
+    "restroom_type": "1 Portable",
+    "location": "Parking Lot",
+    "hours": "24 hours/7days a week"
+  },
+  {
+    "name": "Spring Valley Community Center",
+    "address": "7835 Jamacha Blvd., Spring Valley, CA 91977",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Inside Community Center",
+    "hours": "12 – 8 p.m., Monday – Thursday, 12 – 5 p.m., Friday"
+  },
+  {
+    "name": "Spring Valley Park",
+    "address": "7835 Jamacha Blvd., Spring Valley, CA 91977",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near Pavilion",
+    "hours": "9 a.m. to sunset"
+  },
+  {
+    "name": "Spring Valley Park",
+    "address": "7835 Jamacha Blvd., Spring Valley, CA 91977",
+    "restroom_type": "1 Men's Single Restroom",
+    "location": "Near Pavilion",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Spring Valley Park",
+    "address": "7835 Jamacha Blvd., Spring Valley, CA 91977",
+    "restroom_type": "1 Women's Single Restroom",
+    "location": "Near Pavilion",
+    "hours": "Reservations Only"
+  },
+  {
+    "name": "Steele Canyon",
+    "address": "2925 Steele Canyon Rd., El Cajon, CA. 92019",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Middle of park next to pavillion and playground",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Stelzer",
+    "address": "11470 Wildcat Canyon Rd., Lakeside, CA 92040",
+    "restroom_type": "1 Double Vault Toilet - Gender Neutral",
+    "location": "Wedding/Youth Area",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Stelzer",
+    "address": "11470 Wildcat Canyon Rd., Lakeside, CA 92040",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Upper Loop",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Sweetwater Lane",
+    "address": "1312 Sweetwater Lane, Spring Valley, CA 91977",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Near concession stand",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Sweetwater Place",
+    "address": "10691 Sweetwater Park Place, Spring Valley, CA 91977",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Adjacent to Parking Lot",
+    "hours": "9:30 a.m. to 30 minutes before sunset"
+  },
+  {
+    "name": "Sweetwater Regional Bike Park",
+    "address": "6057 San Miguel Rd. Bonita, CA 91902",
+    "restroom_type": "2 Portables",
+    "location": "Entry Plaza",
+    "hours": "9:30 a.m. to sunset"
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Lower Loop in between sites 34 & 35",
+    "hours": "24 hrs/7 days a week"
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "4 Single Gender Neutral Restrooms",
+    "location": "Mid Loop next to Site 68",
+    "hours": "7 a.m. - 9 p.m."
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "2 Single Gender Neutral Restrooms",
+    "location": "Mid Loop next to Site 68",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "3A",
+    "location": "Upper Loop next to Amphitheatre",
+    "hours": "7 a.m. - 9 p.m."
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "3B",
+    "location": "Upper Loop next to Amphitheatre",
+    "hours": "7 a.m. - 9 p.m."
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "3C",
+    "location": "Upper Loop next to Amphitheatre",
+    "hours": "7 a.m. - 9 p.m."
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd.Bonita, CA 91902",
+    "restroom_type": "3D",
+    "location": "Upper Loop next to Amphitheatre",
+    "hours": "7 a.m. - 9 p.m."
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "3E",
+    "location": "Upper Loop next to Amphitheatre",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "3F",
+    "location": "Upper Loop next to Amphitheatre",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Sweetwater Summit",
+    "address": "3218 Summit Meadow Rd., Bonita, CA 91902",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Community Building",
+    "hours": "9:30 a.m. - sunset"
+  },
+  {
+    "name": "Sycamore Canyon/Goodan Ranch",
+    "address": "16281 Sycamore Canyon Rd., Poway, CA 92064",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Inside Building",
+    "hours": "9 a.m. to 5 p.m., daily"
+  },
+  {
+    "name": "Sycamore Canyon/Goodan Ranch",
+    "address": "16281 Sycamore Canyon Rd., Poway, CA 92064",
+    "restroom_type": "2 Vault Toilets, Gender Neutral",
+    "location": "Adjacent to Visitor Center Parking Area",
+    "hours": "8 a.m. to 5 p.m., daily. Pedestrian access is available sunrise to sunset, daily"
+  },
+  {
+    "name": "Sycamore Canyon/Goodan Ranch",
+    "address": "13920 Highway 67, Lakeside, CA 92040",
+    "restroom_type": "2 Portables",
+    "location": "Parking Lot",
+    "hours": "8 a.m. to 5 p.m., daily. Pedestrian access is available sunrise to sunset, daily"
+  },
+  {
+    "name": "Sycamore Canyon/Goodan Ranch",
+    "address": "16281 Sycamore Canyon Rd., Poway, CA 92064",
+    "restroom_type": "Vault Toilet, Gender Neutral Restroom",
+    "location": "Staging Area",
+    "hours": "8 a.m. to 7 p.m., April – Sept. 8 a.m. to 5 p.m., Oct. – March. Pedestrian access is available sunrise to sunset, daily"
+  },
+  {
+    "name": "Tijuana River Valley Regional Park (TRVRP)",
+    "address": "2721 Monument Rd., San Diego, CA 92154",
+    "restroom_type": "1 Gender Neutral Restroom",
+    "location": "Ranger Station",
+    "hours": "9:30 a.m. -sunset"
+  },
+  {
+    "name": "TRVRP Campground",
+    "address": "1942 Monument Rd., San Diego, CA 92154",
+    "restroom_type": "8 Gender Neutral Restrooms",
+    "location": "Next to Park Office",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "TRVRP Sports Fields",
+    "address": "2487 Sunset Ave, San Diego, CA 92154",
+    "restroom_type": "2 Portables",
+    "location": "Parking Lot",
+    "hours": "9:30 am. - Sunset"
+  },
+  {
+    "name": "Vallecito",
+    "address": "37349 Great Southern Overland Stage Route of 1849, Julian, CA 92036",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Park Entrance",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Vallecito",
+    "address": "37349 Great Southern Overland Stage Route of 1849, Julian, CA 92036",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Park Entrance",
+    "hours": "24 hours/7 days a week"
+  },
+  {
+    "name": "Valley Center Community Center",
+    "address": "28246 Lilac Rd., Valley Center CA 92082",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Behind the Hall",
+    "hours": "Sunrise to Sunset"
+  },
+  {
+    "name": "Valley Center Community Park",
+    "address": "28245 Lilac Rd., Valley Center, CA 92082",
+    "restroom_type": "4 Portables",
+    "location": "Ballfields",
+    "hours": "Sunrise to Sunset"
+  },
+  {
+    "name": "Volcan Mountain",
+    "address": "1209 Farmer Rd",
+    "restroom_type": "2 Portables",
+    "location": "At Hubbell Gateway (Trail Head)",
+    "hours": "Sunrise to Sunset"
+  },
+  {
+    "name": "Waterfront",
+    "address": "1600 Pacific Hwy., San Deigo, CA 92101",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "North Restroom Structure",
+    "hours": "6 a.m. - 10 p.m."
+  },
+  {
+    "name": "Waterfront",
+    "address": "1600 Pacific Hwy., San Diego, CA 92101",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "South Restroom Structure",
+    "hours": "6 a.m. - 10 p.m."
+  },
+  {
+    "name": "Waterfront",
+    "address": "1600 Pacific Hwy., San Diego, CA 92101",
+    "restroom_type": "1 Family Restroom",
+    "location": "North Restroom Structure",
+    "hours": "6 a.m. - 10 p.m."
+  },
+  {
+    "name": "Waterfront",
+    "address": "1600 Pacific Hwy., San Diego, CA 92101",
+    "restroom_type": "1 Family Restroom",
+    "location": "South Restroom Structure",
+    "hours": "6 a.m. - 10 p.m."
+  },
+  {
+    "name": "Whaley House",
+    "address": "2476 San Diego Ave., San Diego, CA 92110",
+    "restroom_type": "1 Family Restroom",
+    "location": "Creole Café",
+    "hours": "10 a.m. - 9 p.m."
+  },
+  {
+    "name": "Whaley House",
+    "address": "2476 San Diego Ave., San Diego, CA 92110",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Exterior",
+    "hours": "10 a.m. - 9 p.m."
+  },
+  {
+    "name": "Whitaker House",
+    "address": "12835 Castle Court, Lakeside CA 92040",
+    "restroom_type": "2 Gender Neutral Restrooms",
+    "location": "Inside",
+    "hours": "Events/Reservations Only"
+  },
+  {
+    "name": "Wilderness Gardens",
+    "address": "14209 Hwy 76, Pala CA 92059",
+    "restroom_type": "6 Portables",
+    "location": "Throughout the preserve along the main trail",
+    "hours": "8 a.m. - 4 p.m."
+  },
+  {
+    "name": "William Heise",
+    "address": "4945 Heise Park Rd., Julian, CA 92036",
+    "restroom_type": "Heise Playground Restroom. Gender specific, multi-stall",
+    "location": "Near Playground/ Entrance",
+    "hours": "24 hours, 7 days a week"
+  },
+  {
+    "name": "William Heise",
+    "address": "4945 Heise Park Rd., Julian, CA 92036",
+    "restroom_type": "Heise Main Restroom. Two gender specific, multi-stall. Two gender neutral, single-stall",
+    "location": "Middle Park, past 1-20 loop",
+    "hours": "24 hours, 7 days a week"
+  },
+  {
+    "name": "William Heise",
+    "address": "4945 Heise Park Rd., Julian, CA 92036",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "41-60 loop nearest site 41",
+    "hours": "24 hours, 7 days a week"
+  },
+  {
+    "name": "William Heise",
+    "address": "4945 Heise Park Rd., Julian, CA 92036",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Cabin loop, near cabin 11",
+    "hours": "24 hours, 7 days a week"
+  },
+  {
+    "name": "William Heise",
+    "address": "4945 Heise Park Rd., Julian, CA 92036",
+    "restroom_type": "2 Gender Specific Restrooms",
+    "location": "Tent loop, nearest site 83",
+    "hours": "24 hours, 7 days a week"
+  },
+  {
+    "name": "Willow Grove Park",
+    "address": "34650 Horse Ranch Creek Rd., Fallbrook, CA. 92028",
+    "restroom_type": "Willow Grove restroom/concession building 4 unisex restrooms",
+    "location": "Main ballfield area",
+    "hours": "8 a.m. to sunset"
+  }
+]

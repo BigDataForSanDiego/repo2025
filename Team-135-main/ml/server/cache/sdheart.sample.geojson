@@ -1,0 +1,6 @@
+{ "type":"FeatureCollection", "features":[
+  { "type":"Feature",
+    "properties": { "ResourceName":"Sample Hygiene Station", "ProgramType":"hygiene", "Hours":"Mon-Sun 8am-8pm", "Address":"123 Demo St", "PhoneNumber":"(555) 123-4567", "UpdatedDate":"2025-01-01T00:00:00Z" },
+    "geometry": { "type":"Point", "coordinates":[-117.1611, 32.7157] }
+  }
+]}

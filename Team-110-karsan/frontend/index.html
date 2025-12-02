@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>LinkedOut</title>
+        <!-- Leaflet CSS (load first so our styles can override) -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <!-- Optional icons / fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>LinkedOut</h1>
+                    <p class="tagline">Connect with resources. Anonymous messaging and quick resource finder.</p>
+                </div>
+                <div class="header-user">
+                    <span id="userDisplay">Welcome!</span>
+                    <button id="signOutBtn" class="btn secondary">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="app container">
+        <section class="map-area">
+            <div id="map" class="map"></div>
+            <div id="mapHints" class="map-hints">
+                <small>Tip: click the map to autofill latitude / longitude for a resource.</small>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="panel">
+                <h2>Ask for Help</h2>
+                <form id="searchForm" class="search-form">
+                    <input id="searchQuery" placeholder="e.g., 'I need water' or 'Where can I eat?'" aria-label="Natural language search" />
+                    <button type="submit" class="btn primary">Find</button>
+                </form>
+                <div id="searchResults" class="search-results" aria-live="polite"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Ping a Resource</h2>
+                <form id="resourceForm" class="resource-form">
+                    <input id="resName" placeholder="Name (required)" />
+                    <select id="resType">
+            <option value="">Select resource type...</option>
+            <option value="water">Water</option>
+            <option value="food">Food</option>
+            <option value="shelter">Shelter</option>
+            <option value="job">Jobs</option>
+            <option value="medical">Medical</option>
+            <option value="other">Other</option>
+          </select>
+                    <input id="resNotes" placeholder="Notes (optional)" />
+                    <div class="coords">
+                        <input id="resLat" placeholder="Latitude" />
+                        <input id="resLon" placeholder="Longitude" />
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn primary">Ping Resource</button>
+                        <button type="button" id="centerMe" class="btn">Center to me</button>
+                    </div>
+                </form>
+                <div id="resourceMsg" class="resource-msg" aria-live="polite"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Forum</h2>
+                <form id="postForm" class="post-form">
+                    <input id="postInput" placeholder="Share info or ask a question" aria-label="New post" />
+                    <button type="submit" class="btn primary">Post</button>
+                </form>
+                <div id="postsList" class="posts-list" aria-live="polite"></div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="app-footer container">
+        <small>LinkedOut — A resource connection platform for the San Diego community.</small>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+        <script>
+            // Register service worker for offline caching
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then(reg => console.log('ServiceWorker registered', reg))
+                        .catch(err => console.warn('ServiceWorker registration failed', err));
+                });
+            }
+        </script>
+</body>
+</html>

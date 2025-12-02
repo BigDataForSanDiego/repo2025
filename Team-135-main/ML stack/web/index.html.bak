@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VoiceMap + Safe-Path</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="panel" id="panel">
+    <div class="row">
+      <label>Origin</label>
+      <input id="orig" placeholder="32.7157,-117.1611">
+      <div class="btns">
+        <button id="btnMyLoc">Use my location</button>
+        <button id="btnPickOrig">Pick on map</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Destination</label>
+      <input id="dest" placeholder="32.7175,-117.1570">
+      <div class="btns">
+        <button id="btnPickDest">Pick on map</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <button id="btnRoute" class="primary">Route Safe</button>
+      <span id="routeMeta"></span>
+    </div>
+
+    <div class="row small">
+      <label><input type="checkbox" id="toggleResources" checked> Show resources</label>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>

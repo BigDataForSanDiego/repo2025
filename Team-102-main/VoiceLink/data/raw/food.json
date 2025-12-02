@@ -1,0 +1,93 @@
+[
+  {
+    "Agency": "Bayview Church",
+    "Address": "6134 Pastor Timothy J Winters St.",
+    "City": "San Diego",
+    "ZIP": "92114",
+    "Distribution": "Weekly — Tue 9 a.m.–12 p.m.; Thu 3–6 p.m. (hours may change)"
+  },
+  {
+    "Agency": "Epiphany Women in Focus",
+    "Address": "5081 Logan Ave.",
+    "City": "San Diego",
+    "ZIP": "92113",
+    "Distribution": "Weekly — Mon–Fri 11 a.m.–5 p.m."
+  },
+  {
+    "Agency": "Father Joe’s Villages",
+    "Address": "3350 E St.",
+    "City": "San Diego",
+    "ZIP": "92102",
+    "Distribution": "Weekly — Fri 12–2 p.m."
+  },
+  {
+    "Agency": "I Am My Brother’s Keeper",
+    "Address": "6601 Imperial Ave.",
+    "City": "San Diego",
+    "ZIP": "92114",
+    "Distribution": "Weekly — Tue 1–3 p.m."
+  },
+  {
+    "Agency": "Logan Heights Community Development Corp.",
+    "Address": "3040 Imperial Ave.",
+    "City": "San Diego",
+    "ZIP": "92102",
+    "Distribution": "Monthly — 3rd Fri 10 a.m.–12 p.m."
+  },
+  {
+    "Agency": "Logan Temple AME Zion Church",
+    "Address": "302 S. 32nd St.",
+    "City": "San Diego",
+    "ZIP": "92113",
+    "Distribution": "Weekly — Sat 9 a.m.–12 p.m."
+  },
+  {
+    "Agency": "New Day Urban Ministries",
+    "Address": "2459 Market St.",
+    "City": "San Diego",
+    "ZIP": "92102",
+    "Distribution": "Weekly — Mon–Fri 9–11:45 a.m.; Mon–Thu 1–3 p.m."
+  },
+  {
+    "Agency": "San Diego Black Panther Party (Elks Lodge)",
+    "Address": "6 Hensley St.",
+    "City": "San Diego",
+    "ZIP": "92102",
+    "Distribution": "Weekly — Wed 11 a.m.–1 p.m."
+  },
+  {
+    "Agency": "San Diego Maranatha SDA Church",
+    "Address": "6065 Skyline Dr.",
+    "City": "San Diego",
+    "ZIP": "92114",
+    "Distribution": "Monthly — 4th Sat 2 p.m."
+  },
+  {
+    "Agency": "Sherman Heights Community Center",
+    "Address": "2258 Island Ave.",
+    "City": "San Diego",
+    "ZIP": "92102",
+    "Distribution": "Monthly — Family: 1st Thu 9 a.m.–12 p.m.; Seniors: 2nd Wed 9 a.m.–12 p.m."
+  },
+  {
+    "Agency": "Stepping Higher",
+    "Address": "7373 University Ave., #201",
+    "City": "La Mesa",
+    "ZIP": "91942",
+    "Distribution": "Weekly — Tue–Thu 10 a.m.–1 p.m."
+  },
+  {
+    "Agency": "Stepping Higher (SD 211 Service Ctr)",
+    "Address": "138 28th St.",
+    "City": "San Diego",
+    "ZIP": "92102",
+    "Distribution": "Weekly — Tue & Thu 2–4 p.m."
+  },
+  {
+    "Agency": "Trinity Lutheran Church",
+    "Address": "7210 Lisbon St.",
+    "City": "San Diego",
+    "ZIP": "92114",
+    "Distribution": "Monthly — 1st Tue & Thu 9 a.m.–2 p.m.; 3rd Tue & Thu 9 a.m.–2 p.m."
+  }
+]

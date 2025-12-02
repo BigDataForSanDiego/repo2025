@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nearby Help Finder</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <!-- iPhone Simulator Frame -->
+    <div class="iphone-simulator">
+        <div class="status-bar">
+            <span>9:41 AM</span>
+            <span>🔋100%</span>
+        </div>
+        <div class="app">
+            <header>
+                <h1>Find Nearby Help</h1>
+                <p>Tap below to find the nearest shelter or food resource.</p>
+            </header>
+
+            <main>
+                <button id="findBtn">📍 Find Nearest Help</button>
+                <div id="result" class="hidden"></div>
+            </main>
+
+            <footer>
+                <p>Powered by SDSU Hackathon</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const findBtn = document.getElementById("findBtn");
+        const resultDiv = document.getElementById("result");
+
+        findBtn.addEventListener("click", () => {
+            findBtn.disabled = true;
+            findBtn.innerText = "Locating...";
+
+            navigator.geolocation.getCurrentPosition(pos => {
+                const formData = new FormData();
+                formData.append("lat", pos.coords.latitude);
+                formData.append("lon", pos.coords.longitude);
+
+                fetch("/nearest", { method: "POST", body: formData })
+                    .then(res => res.json())
+                    .then(data => {
+                        findBtn.innerText = "📍 Find Nearest Help";
+                        findBtn.disabled = false;
+
+                        resultDiv.classList.remove("hidden");
+                        resultDiv.innerHTML = `
+                            <div class="card">
+                                <h2>${data.name}</h2>
+                                <p><strong>Type:</strong> ${data.type}</p>
+                                <p><strong>Address:</strong> ${data.address}</p>
+                                <p><strong>Distance:</strong> ${data.distance_km} km</p>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=${data.lat},${data.lon}" target="_blank" class="map-btn">
+                                    Open in Maps
+                                </a>
+                            </div>
+                        `;
+                    })
+                    .catch(() => {
+                        findBtn.innerText = "Try Again";
+                        findBtn.disabled = false;
+                        resultDiv.innerHTML = `<p class="error">Unable to fetch data. Please try again.</p>`;
+                    });
+            }, err => {
+                findBtn.innerText = "📍 Find Nearest Help";
+                findBtn.disabled = false;
+                resultDiv.innerHTML = `<p class="error">Location access denied. Please enable location services.</p>`;
+            });
+        });
+    </script>
+</body>
+</html>

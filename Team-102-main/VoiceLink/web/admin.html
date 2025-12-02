@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VoiceLink Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b1220; --panel:#141c2f; --text:#e8eefc; --muted:#aab7d4; --accent:#8ab4ff; --ok:#10b981; --warn:#f59e0b; --err:#ef4444; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:Inter,system-ui,Segoe UI,Arial; color:var(--text); background:linear-gradient(180deg,#0b1220,#0f1730 50%,#0b1220); }
+    .wrap{ max-width:980px; margin:0 auto; padding:24px 16px; }
+    h1{ margin:0 0 12px; font-size:26px; }
+    .panel{ background:var(--panel); border:1px solid #263152; border-radius:12px; padding:16px; margin:12px 0; }
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+    input, textarea, select{
+      width:100%; padding:10px 12px; border-radius:10px; border:1px solid #2a3550; background:#0f1930; color:var(--text); outline:none;
+    }
+    .btn{ padding:10px 14px; border-radius:10px; border:1px solid #2a3550; background:#1a2440; color:var(--text); cursor:pointer; }
+    .btn.ok{ background:#143a2e; border-color:#1c5946; }
+    .btn.warn{ background:#3a2e14; border-color:#5a431c; }
+    .muted{ color:var(--muted); font-size:13px; }
+    table{ width:100%; border-collapse:collapse; margin-top:8px; }
+    th, td{ padding:8px; border-bottom:1px solid #263152; text-align:left; font-size:14px; }
+    th{ color:#bcd0ff; }
+    .flex{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .right{ margin-left:auto; }
+    .pill{ padding:4px 8px; border-radius:999px; background:#1a2440; border:1px solid #2a3550; font-size:12px; color:#d7e3ff; }
+    .stale{ color:var(--warn); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>VoiceLink Admin</h1>
+  <p class="muted">Update shelter bed availability. Your admin token is required to read & write.</p>
+
+  <div class="panel">
+    <div class="flex">
+      <div>
+        <label for="token">Admin Token</label>
+        <input id="token" placeholder="Paste your X-Admin-Token"/>
+      </div>
+      <button class="btn right" onclick="saveToken()">Save Token</button>
+      <button class="btn" onclick="loadData()">Reload</button>
+    </div>
+    <div class="muted" id="status" style="margin-top:6px;"></div>
+  </div>
+
+  <div class="panel">
+    <h3 style="margin-top:0;">Add / Update Availability</h3>
+    <div class="row">
+      <div>
+        <label for="service_name">Service Name</label>
+        <input id="service_name" placeholder="e.g., PATH Connections"/>
+      </div>
+      <div>
+        <label for="beds_total">Total Beds (optional)</label>
+        <input id="beds_total" type="number" min="0" placeholder="e.g., 120"/>
+      </div>
+      <div>
+        <label for="beds_available">Beds Available</label>
+        <input id="beds_available" type="number" min="0" placeholder="e.g., 7"/>
+      </div>
+      <div>
+        <label for="ttl_minutes">TTL Minutes</label>
+        <input id="ttl_minutes" type="number" min="5" value="120"/>
+      </div>
+      <div>
+        <label for="notes">Notes</label>
+        <input id="notes" placeholder="e.g., Singles only"/>
+      </div>
+    </div>
+    <div class="flex" style="margin-top:10px;">
+      <button class="btn ok" onclick="saveEntry()">Save</button>
+      <span class="muted">Saving overwrites existing entry for the same service name.</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="flex">
+      <h3 style="margin:0;">Current Availability</h3>
+      <input id="filter" placeholder="Filter by name…" oninput="renderTable()" style="margin-left:auto; max-width:260px;">
+    </div>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name (key)</th>
+          <th>Avail</th>
+          <th>Total</th>
+          <th>Last Updated</th>
+          <th>TTL</th>
+          <th>Notes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const $ = sel => document.querySelector(sel);
+let availability = {};
+let cachedToken = localStorage.getItem("voicelink.admin.token") || "";
+
+function setStatus(msg){ $("#status").textContent = msg || ""; }
+function authHeaders(){
+  const token = $("#token").value.trim();
+  return {
+    "Content-Type": "application/json",
+    "X-Admin-Token": token
+  };
+}
+function saveToken(){
+  const t = $("#token").value.trim();
+  localStorage.setItem("voicelink.admin.token", t);
+  setStatus("Token saved locally.");
+}
+async function loadData(){
+  try{
+    setStatus("Loading…");
+    const res = await fetch("/availability", { method:"GET", headers: authHeaders() });
+    if(!res.ok){
+      const j = await res.json().catch(()=>({}));
+      setStatus(`Error ${res.status}: ${j.error || res.statusText}`);
+      return;
+    }
+    const data = await res.json();
+    availability = data.availability || {};
+    renderTable();
+    setStatus("Loaded.");
+  }catch(e){
+    console.error(e);
+    setStatus("Failed to load.");
+  }
+}
+function renderTable(){
+  const filter = ($("#filter").value || "").toLowerCase().trim();
+  const tbody = $("#tbody");
+  tbody.innerHTML = "";
+  const keys = Object.keys(availability).sort();
+  keys.forEach(k=>{
+    if(filter && !k.includes(filter)) return;
+    const a = availability[k] || {};
+    const tr = document.createElement("tr");
+    const stale = isStale(a) ? "stale" : "";
+    tr.innerHTML = `
+      <td><span class="pill">${k}</span></td>
+      <td>${a.beds_available ?? ""}</td>
+      <td>${a.beds_total ?? ""}</td>
+      <td class="${stale}">${a.last_updated ?? ""}</td>
+      <td>${a.ttl_minutes ?? ""}</td>
+      <td>${a.notes ?? ""}</td>
+      <td><button class="btn warn" onclick="deleteEntry('${k}')">Delete</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+function isStale(a){
+  try{
+    const lu = a.last_updated ? new Date(a.last_updated) : null;
+    const ttl = Number(a.ttl_minutes || 120);
+    if(!lu || isNaN(ttl)) return true;
+    return (Date.now() - lu.getTime()) > ttl*60*1000;
+  }catch(_){ return true; }
+}
+async function saveEntry(){
+  const payload = {
+    service_name: $("#service_name").value.trim(),
+    beds_total: Number($("#beds_total").value || 0),
+    beds_available: Number($("#beds_available").value || 0),
+    ttl_minutes: Number($("#ttl_minutes").value || 120),
+    notes: $("#notes").value || null
+  };
+  if(!payload.service_name){ setStatus("Enter a service name."); return; }
+  try{
+    setStatus("Saving…");
+    const res = await fetch("/availability", {
+      method:"POST",
+      headers: authHeaders(),
+      body: JSON.stringify(payload)
+    });
+    const j = await res.json().catch(()=>({}));
+    if(!res.ok){ setStatus(`Error ${res.status}: ${j.error || res.statusText}`); return; }
+    setStatus("Saved.");
+    await loadData();
+    // Keep form values; or clear if you prefer:
+    // $("#service_name").value = ""; $("#beds_total").value = ""; $("#beds_available").value = "";
+  }catch(e){
+    console.error(e);
+    setStatus("Failed to save.");
+  }
+}
+async function deleteEntry(key){
+  if(!confirm(`Delete availability for "${key}"?`)) return;
+  try{
+    setStatus("Deleting…");
+    const res = await fetch("/availability/delete", {
+      method:"POST",
+      headers: authHeaders(),
+      body: JSON.stringify({ service_name: key })
+    });
+    const j = await res.json().catch(()=>({}));
+    if(!res.ok){ setStatus(`Error ${res.status}: ${j.error || res.statusText}`); return; }
+    setStatus("Deleted.");
+    await loadData();
+  }catch(e){
+    console.error(e);
+    setStatus("Failed to delete.");
+  }
+}
+
+// init
+document.addEventListener("DOMContentLoaded", ()=>{
+  $("#token").value = cachedToken;
+  if(cachedToken) loadData();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+/* Dark Theme with Purple/Blue Accents */
+
+:root {
+  /* Background Colors - Darker Theme */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d30;
+  --bg-tertiary: #3e3e42;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  
+  /* Accent Colors - Purple/Blue */
+  --accent: #6c8fff;
+  --accent-hover: #5a7cff;
+  --accent-secondary: #8b5cf6;
+  --accent-secondary-hover: #7c3aed;
+  
+  /* Status Colors */
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  
+  /* Border Colors */
+  --border: #4a5568;
+  --border-hover: #6c8fff;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6c8fff, #8b5cf6);
+  color: white;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(108, 143, 255, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: var(--error);
+  color: white;
+  border: 1px solid var(--error);
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Cards */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  border-color: rgba(108, 143, 255, 0.5);
+}
+
+/* Input Fields */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108, 143, 255, 0.2);
+}
+
+/* Upload Areas */
+.upload-area {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  background-color: var(--bg-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-area:hover {
+  border-color: var(--accent);
+  background-color: var(--bg-tertiary);
+  border-style: solid;
+}
+
+.upload-area.drag-over {
+  border-color: var(--accent);
+  background-color: rgba(108, 143, 255, 0.1);
+  border-style: solid;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6c8fff, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a7cff, #7c3aed);
+}
+
+/* Firefox scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6c8fff var(--bg-tertiary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  
+  nav {
+    padding: 1rem !important;
+  }
+  
+  .card {
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+  
+  .btn {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Make homepage buttons stack vertically on mobile */
+  .homepage-buttons {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Ensure full width on mobile */
+@media (max-width: 768px) {
+  nav, main, footer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Prevent ugly text selection and hover effects */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+button, .btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Remove unwanted hover borders on text */
+h1, h2, h3, h4, h5, h6, p, span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Homepage Action Buttons */
+.home-action-btn {
+  padding: 2rem;
+  border-radius: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+.home-action-btn-rationer {
+  border: 3px solid #6c8fff;
+  background-color: rgba(108, 143, 255, 0.05);
+}
+
+.home-action-btn-rationer:hover {
+  background-color: rgba(108, 143, 255, 0.15);
+  border-color: #818cf8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 143, 255, 0.4);
+}
+
+.home-action-btn-benefits {
+  border: 3px solid #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.05);
+}
+
+.home-action-btn-benefits:hover {
+  background-color: rgba(139, 92, 246, 0.15);
+  border-color: #a855f7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.home-action-btn-recycle {
+  border: 2px solid #10b981;
+  background-color: transparent;
+}
+
+.home-action-btn-recycle:hover {
+  background-color: rgba(16, 185, 129, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.home-action-btn-map {
+  border: 3px solid #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.home-action-btn-map:hover {
+  background-color: rgba(231, 76, 60, 0.15);
+  border-color: #ef5753;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+/* Navigation Bar */
+nav {
+  padding: 1rem 2rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: relative;
+}
+
+nav > div:first-child {
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #6c8fff;
+  text-shadow: 0 2px 8px rgba(108, 143, 255, 0.3);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.desktop-nav .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile Hamburger Button */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav-drawer {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0 0 0 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-drawer .btn {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+footer p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Benefit Program Label Styles */
+.benefit-program-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.benefit-program-label:hover {
+  background-color: rgba(108, 143, 255, 0.03);
+}
+
+.benefit-program-label.checked {
+  background-color: rgba(108, 143, 255, 0.05);
+  border-color: var(--accent);
+}
+
+.benefit-program-label.checked:hover {
+  background-color: rgba(108, 143, 255, 0.08);
+}
+
+.benefit-program-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-program-label.checked .benefit-program-checkbox {
+  background-color: var(--accent);
+}
+
+.benefit-program-text {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.benefit-program-desc {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+ 
+
+/* Global Analysis Status Notification */
+.analysis-status-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.analysis-status-notification.complete {
+  cursor: pointer;
+}
+
+.analysis-status-notification .status-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analysis-status-notification .status-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analysis-status-notification .status-icon.complete {
+  background-color: var(--success);
+}
+
+.analysis-status-notification .status-icon.loading {
+  border: 2px solid transparent;
+  border-top: 2px solid var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+.analysis-status-notification .status-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.analysis-status-notification .status-text.complete {
+  color: var(--success);
+}
+
+.analysis-status-notification .status-text.loading {
+  color: var(--text-primary);
+}

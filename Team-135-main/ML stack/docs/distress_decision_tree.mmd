@@ -1,0 +1,8 @@
+flowchart TD
+  A[User: I feel unsafe] --> B{Immediate danger?}
+  B -- Yes --> C[Ask consent to share location]
+  C --> D[Simulated 911 escalation + coarse location]
+  B -- No --> E[Offer Safe-Path to lit place + Notify outreach (simulated)]
+  E --> F[Log anonymous report]
+  D --> G[Reassure + options]
+  F --> G[Return home]

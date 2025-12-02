@@ -1,0 +1,12 @@
+requests
+pandas
+openpyxl
+pdfplumber
+flask
+dotenv
+geopy
+pgeocode
+streamlit
+groq
+pypdf2
+plotly

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Father Joe's Village",
+        "type": "Shelter",
+        "lat": 32.7106,
+        "lon": -117.157,
+        "address": "1501 Imperial Ave, San Diego, CA"
+    },
+    {
+        "name": "San Diego Rescue Mission",
+        "type": "Food & Shelter",
+        "lat": 32.7174,
+        "lon": -117.165,
+        "address": "120 Elm St, San Diego, CA"
+    }
+]

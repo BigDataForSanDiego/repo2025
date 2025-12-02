@@ -1,0 +1,4 @@
+{
+  "resource": { "name":"", "type":"", "lat":0, "lng":0, "hours_json":null, "eligibility_notes":null, "address":null, "contact":null, "status":null, "capacity_available":null, "wait_minutes":null, "last_verified_at":null, "source":"" },
+  "report": { "id":0, "ts":"", "type":"unsafe|closed|missing", "lat":0, "lng":0, "note":"" }
+}
